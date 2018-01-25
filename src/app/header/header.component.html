@@ -1,7 +1,7 @@
 <div class="ui top menu huge borderless grid">
   <div class="header item one wide column"
-       routerLink="/">
-    WowSome
+       routerLink="/auth">
+    APP
   </div>
   <a routerLinkActive="active" class="item one wide column"
      routerLink="/home">
@@ -18,10 +18,6 @@
   </div>
 
   <div class="right menu">
-    <!--<ng-template [ngIf]="authService.isAuthenticated()">-->
-    <!--<a  class="item" routerLink="/auth">Register</a>-->
-    <!--<a class="item" routerLink="/auth">Login</a>-->
-    <!--</ng-template>-->
     <a *ngIf="!authService.isAuthenticated()"
        style="cursor: pointer;"
        (click)="onLogout()"

@@ -31,4 +31,16 @@
   </div>
 </div>
 
+<div class="ui negative message"
+     style="margin: 20px 20% 20px 20%;"
+     [ngClass]="{hidden: showMessage === false}"
+     [ngClass]="{show: showMessage === true}">
+  <i class="close icon" (click)="dismissMessage()"></i>
+  <div class="header">
+    {{messageService.getHeader()}}
+  </div>
+  <p>{{messageService.getMessage()}}
+  </p>
+</div>
+
 
