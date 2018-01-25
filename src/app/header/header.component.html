@@ -1,0 +1,32 @@
+<div class="ui top menu huge borderless grid">
+  <div class="header item one wide column"
+       routerLink="/">
+    WowSome
+  </div>
+  <a routerLinkActive="active" class="item one wide column"
+     routerLink="/home">
+    Home
+  </a>
+  <div class="ui transparent icon middle input six wide column"
+       style="margin-left: 20%">
+    <input class="prompt"
+           type="text"
+           placeholder="Search Users..."
+           [ngModel]="value"
+           (ngModelChange)="homeService.searchUser($event)">
+    <i class="search link icon"></i>
+  </div>
+
+  <div class="right menu">
+    <!--<ng-template [ngIf]="authService.isAuthenticated()">-->
+    <!--<a  class="item" routerLink="/auth">Register</a>-->
+    <!--<a class="item" routerLink="/auth">Login</a>-->
+    <!--</ng-template>-->
+    <a *ngIf="!authService.isAuthenticated()"
+       style="cursor: pointer;"
+       (click)="onLogout()"
+       class="item one wide column"
+    >Logout
+    </a>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+
+<div class="ui divided grid segment "  style="margin: 0 20% 0 20%;">
+  <div class="row ui top menu" id="background"
+       style="cursor: pointer; border: none">
+    <div class="eight wide column item"
+         style="text-align: center"
+         [ngStyle] = "{'color': existingUser ? 'green':'black'}"
+         (click)="onSignIn()"
+    >Login</div>
+    <div class="eight wide column item"
+         style="text-align: center"
+         [ngStyle] = "{'color': !existingUser ? 'green':'black'}"
+         (click)="onSignUp()"
+    >Register</div>
+  </div>
+</div>
+<app-signin *ngIf="existingUser"></app-signin>
+<app-signup *ngIf="!existingUser"></app-signup>
+

@@ -1,0 +1,57 @@
+<form class="ui form segment"
+      style="margin: 20px 20% 0 20%;"
+      (ngSubmit)="onSignUp(form)"
+      #form = ngForm>
+  <div class="field">
+    <label for="name">Name</label>
+    <input type="text"
+           name="name"
+           id="name"
+           ngModel
+           required
+           placeholder="Enter your Name">
+  </div>
+  <div class="field">
+    <label for="email">Email</label>
+    <input type="email"
+           name="email"
+           id="email"
+           ngModel
+           required
+           placeholder="Enter your email"
+           pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
+  </div>
+  <div class="field">
+    <label for="password">Password</label>
+    <input type="password"
+           name="password"
+           id="password"
+           ngModel
+           required
+           placeholder="Enter your password">
+  </div>
+  <div class="field">
+    <label for="number">Number</label>
+    <input type="text"
+           name="number"
+           id="number"
+           ngModel
+           required
+           placeholder="Enter your Number">
+  </div>
+
+  <button class="ui button" type="submit" [disabled]="!form.valid">Register</button>
+</form>
+
+
+<div class="ui negative message"
+     style="margin: 20px 20% 20px 20%;"
+     [ngClass]="{hidden: showMessage === false}"
+     [ngClass]="{show: showMessage === true}">
+  <i class="close icon" (click)="dismissMessage()"></i>
+  <div class="header">
+    {{messageService.getHeader()}}
+  </div>
+  <p>{{messageService.getMessage()}}
+  </p>
+</div>
