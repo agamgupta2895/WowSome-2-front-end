@@ -6,8 +6,9 @@ import {HomeComponent} from './home/home.component';
 
 const appRoutes: Routes = [
   {path: 'auth', component: AuthComponent},
-  {path: 'home', component: HomeComponent}
-];
+  {path: 'home', component: HomeComponent},
+  {path: '**', redirectTo: 'auth'}
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],

@@ -2,6 +2,9 @@
   <div class="ui grid">
     <div class="ui card"
          style="cursor: pointer;">
+      <div class="image">
+        <img src="assets/avatar2.png">
+      </div>
       <div class="content">
         <div class="header">{{users.name}}</div>
         <div class="meta">{{users.email}}</div>
@@ -15,10 +18,14 @@
 </div>
 
 <div class="container" *ngIf="search">
-  <div class="ui grid">
+  <div class="ui grid" style="margin: auto;">
     <div class="ui card"
          *ngFor="let user of users"
-         style="cursor: pointer; margin-right: 10px">
+         style="
+         cursor: pointer; margin-right: 50px;">
+      <div class="image">
+        <img src="assets/avatar2.png">
+      </div>
       <div class="content">
         <div class="header">{{user.name}}</div>
         <div class="meta">{{user.email}}</div>
@@ -27,7 +34,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
