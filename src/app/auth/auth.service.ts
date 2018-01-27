@@ -1,10 +1,9 @@
-import {Router} from '@angular/router';
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 
 @Injectable()
 export class AuthService {
-  constructor(private router: Router, private http: Http) {
+  constructor(private http: Http) {
 
   }
 
@@ -13,7 +12,7 @@ export class AuthService {
       name: name,
       email: email,
       password: password,
-      number : number
+      number: number
     };
     return this.http.post('http://localhost:3000/' + 'auth/signup', body);
   }

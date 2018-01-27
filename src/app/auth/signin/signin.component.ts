@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../auth.service';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
@@ -12,6 +12,7 @@ import {MessageService} from '../../services/message.service';
 export class SigninComponent implements OnInit {
 
   showMessage = false;
+
   constructor(private authService: AuthService,
               private router: Router,
               private messageService: MessageService) {
@@ -19,6 +20,8 @@ export class SigninComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  /*Function called when the user submits the signin form */
 
   onSignIn(form: NgForm) {
     const email = form.value.email;

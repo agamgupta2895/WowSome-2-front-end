@@ -20,7 +20,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  /*Function called when the user submits the signup form */
   onSignUp(form: NgForm) {
     const name = form.value.name;
     const email = form.value.email;
